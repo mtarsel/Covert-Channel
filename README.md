@@ -14,5 +14,6 @@ sudo python reader.py [HOST IP] [PORT]
 To run client:
 sudo python client.py [HOST IP] [PORT]
 
-Message is currently hardcoded.  Fails to parse message, use wireshark and
-examine TCP checksum to find message "Hi".
+Message is currently hardcoded. 
+
+The sniffer does not acknowledge the crafted packet. This is presumably because the C standard socket library automatically drops packets with invalid checksums. On the other hand, Wireshark is quite capable of sniffing packets with invalid checksums :)
